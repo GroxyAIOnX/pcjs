@@ -9,22 +9,17 @@ type = "static"
   root_dir = "_site"
   watch_paths = []
 
-[build.environments]
-  [build.environments.production]
-    vars = { JEKYLL_ENV = "production" }
-  [build.environments.preview]
-    vars = { JEKYLL_ENV = "development" }
+[build.environments.production]
+  vars = { JEKYLL_ENV = "production" }
+
+[build.environments.preview]
+  vars = { JEKYLL_ENV = "development" }
 
 # Redirects for clean URLs
-[redirects]
 [[redirects]]
   from = "/:path/"
   to = "/:path"
   status = 301
-
-# Custom headers for caching
-[[build.upload]]
-  dir = "_site"
 
 [env.production]
   routes = [
