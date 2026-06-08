@@ -1,0 +1,36 @@
+# Cloudflare Pages configuration for PCjs
+
+name = "pcjs"
+type = "static"
+
+[build]
+  command = "bundle install && npm install && npm run build && bundle exec jekyll build"
+  cwd = "/"
+  root_dir = "_site"
+  watch_paths = []
+
+[build.environments]
+  [build.environments.production]
+    vars = { JEKYLL_ENV = "production" }
+  [build.environments.preview]
+    vars = { JEKYLL_ENV = "development" }
+
+# Redirects for clean URLs
+[redirects]
+[[redirects]]
+  from = "/:path/"
+  to = "/:path"
+  status = 301
+
+# Custom headers for caching
+[[build.upload]]
+  dir = "_site"
+
+[env.production]
+  routes = [
+    { pattern = "pcjs.org", zone_name = "pcjs.org" },
+    { pattern = "www.pcjs.org", zone_name = "pcjs.org" },
+  ]
+
+[env.preview]
+  routes = []

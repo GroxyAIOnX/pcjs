@@ -1,0 +1,10 @@
+# Cloudflare Pages specific Jekyll configuration
+# This file is optional and can override values for Cloudflare Pages deployments
+
+# Uncomment and set if deploying to a Cloudflare Pages custom domain:
+# domain: your-custom-domain.com
+# url: https://your-custom-domain.com
+
+# For Cloudflare Pages automatic subdomain:
+# domain: your-project.pages.dev
+# url: https://your-project.pages.dev
