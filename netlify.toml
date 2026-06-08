@@ -1,0 +1,37 @@
+# Netlify configuration for PCjs
+
+[build]
+  command = "bundle install && npm install && npm run build && bundle exec jekyll build"
+  publish = "_site"
+  environment = { JEKYLL_ENV = "production" }
+
+[build.environment]
+  # Ruby version for Netlify
+  RUBY_VERSION = "3.2.0"
+
+# Redirect trailing slashes for clean URLs
+[[redirects]]
+  from = "/:path/"
+  to = "/:path"
+  status = 301
+
+# Cache settings for static assets
+[[headers]]
+  for = "/**"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

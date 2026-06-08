@@ -1,0 +1,10 @@
+# Netlify-specific Jekyll configuration
+# Use this config if needed to override values per environment
+
+# Set your Netlify subdomain or custom domain here:
+# domain: your-site.netlify.app
+# or
+# domain: your-custom-domain.com
+
+# For development, the _developer.yml takes precedence
+# For production on Netlify, you can set environment-specific URLs via Netlify env vars
